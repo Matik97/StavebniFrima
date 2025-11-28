@@ -1,0 +1,59 @@
+/* Existující kód */
+.button {
+    display: flex;
+    height: var(--h50);
+    /* width: 150px;  <- Vyhodil jsem pevnou šířku, aby to bylo pružnější */
+    padding: 0 20px; /* Místo pevné šířky raději padding */
+    font-size: var(--font-size-xl);
+    align-items: center;
+    justify-content: center;
+    margin: var(--margin-size-10);
+    border-radius: 5px;
+    color: var(--secondary);
+    white-space: nowrap; /* Text na jednom řádku */
+}
+
+.button:hover {
+    background-color: gray;
+}
+
+/* --- NOVÉ: Hamburger Tlačítko --- */
+.menu-btn {
+    display: none; /* Na desktopu skryté */
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    order: 2; /* Na mobilu vpravo */
+    z-index: 1001;
+}
+
+.menu-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 750px) {
+    .menu-btn {
+        display: flex;
+    }
+    .header.active .menu-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 8px);
+    }
+    .header.active .menu-btn span:nth-child(2) {
+        opacity: 0;
+    }
+    .header.active .menu-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -8px);
+    }
+}
+/* Celkový obal pro všechny projekty */
+
+
