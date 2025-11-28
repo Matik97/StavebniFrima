@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="csskp/style.css" />
+    <title>Stavební firma</title>
+</head>
+
+<body>
+  
+    <div class="kontejner">
+        <div class="header" id="main-header">
+            <div class="header-nav">
+                
+                
+
+                <a href="/" class="nav-logo">
+                    <img src="IMG/Logo.gif" alt="Logo">
+                </a>
+            
+              
+                <button class="menu-btn" id="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav-right">
+                    <ul>
+                        <li><a href="/login" class="button">Kontakty</a></li>
+                        <li><a href="/registrace" class="button">O Nás</a></li>
+                        <li><a href="Projekty.html" class="button">Projekty</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+ <nav class="projekt-layout">
+            
+                   <div class="portfolio-kontejner">
+            <div class="portfolio-obrazek">
+           <img src="IMG/Dum2.jpg" alt="Projekt 1">
+            </div>
+            <div class="portfolio-text">
+                <h2>Moderní rodinný dům</h2>
+                <p>Popis projektu moderního rodinného domu s důrazem na energetickou účinnost a design.</p>
+            
+              </div>      
+                  
+    
+    </div>  
+        </nav>
+    <div class="main">
+            <p>
+                Hybridní kick point je ideální pro tvůrce hry...
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Toto je footer</p>
+        </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainHeader = document.getElementById('main-header');
+
+        menuToggle.addEventListener('click', () => {
+            mainHeader.classList.toggle('active');
+        });
+    </script>
+ </div>
+</body>
+</html>
