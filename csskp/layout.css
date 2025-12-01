@@ -38,7 +38,7 @@
 .nav-logo {
     justify-items: start;
     align-items: center;
-    margin: var(--m20);
+    margin: var(--spacing-20);
 }
 
 .nav-logo img {
@@ -77,16 +77,16 @@
     grid-row: 2/3;
     backdrop-filter: blur(8px);
     background: var(--light-transparent);
-    color: black;
-    padding: var(--p50);
-    border-radius: 20px;
-    margin: var(--m50);
+    color:var(--dark);
+    padding: var(--spacing-50);
+    border-radius: var(--radius-20);
+    margin: var(--spacing-20);
 }
 
 .main {
     grid-column: 1/-1;
     grid-row: 3;
-    padding: var(--p20); /* Přidáno odsazení */
+    padding: var(--spacing-25); /* Přidáno odsazení */
 }
 
 .footer {
@@ -111,7 +111,7 @@
       
         align-items: center;
         justify-content: center;
-        padding: 40px 0; /* Přidáme polstrování nahoře a dole, aby text nebyl nalepený */
+        padding: var(--spacing-40) 0; /* Přidáme polstrování nahoře a dole, aby text nebyl nalepený */
 }
 h1{
 font-size:var(--font-size-2xl) ;
@@ -124,7 +124,7 @@ font-size:var(--font-size-m);
         display: flex;
         flex-wrap: wrap; /* Povolit zalomení */
         justify-content: space-between;
-        padding: 10px ;
+        padding:var(--spacing-10);
     }
 
     .nav-logo {
@@ -170,27 +170,26 @@ font-size:var(--font-size-m);
 .projekt-layout {
    grid-column:1/-1;
    grid-row:1/3; 
-   width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
-    grid-template-rows: 1fr auto 1fr;
+    display: flex;
+    margin:auto;
+    margin-top:var(--spacing-150);
+   
 
 }
 .portfolio-kontejner {
- grid-row:2;
- grid-column:2;
+
 display:flex;
    align-items: center;
-   justify-content: center;
-   gap:80px;
-   padding:80px;
+   justify-content: center; 
+   gap:var(--spacing-75);
+   padding:var(--spacing-30);
   border-radius:10px;
-  box-shadow:black 0px 0px 10px;
+  box-shadow:rgba(0,0,0,0.25) 0px 4px 15px;
+ align-items:flex-start
 }
 .portfolio-obrazek{
-width: 600px;
-height:500px;
+width: 500px;
+height:400px;
 
 }
 .portfolio-obrazek img {
@@ -198,7 +197,13 @@ height:500px;
     height: 100%;         /* Vyplň výšku */
     object-fit: cover;    /* Ořízni se, nedeformuj se */
     display:block;
+    border-radius:10px;
 }
-    .portfolio-text{
-flex:1;
+ .portfolio-text{
+    max-width:1100px;
+
+}
+.portfolio-text p, h2{
+text-align:left;
+
 }
