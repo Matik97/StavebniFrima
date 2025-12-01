@@ -98,10 +98,71 @@
     justify-content: center;
     
 }
+.projekt-layout {
+   grid-column:1/-1;
+   grid-row:1/3; 
+    display: flex;
+    margin:auto;
+    margin-top:var(--spacing-150);
+   gap:var(--spacing-150);
+    flex-direction: column
+
+}
+.portfolio-kontejner {
+
+display:flex;
+   align-items: center;
+   justify-content: center; 
+   padding:var(--spacing-30);
+   gap:var(--spacing-75);
+  border-radius:10px;
+  box-shadow:rgba(0,0,0,0.25) 0px 4px 15px;
+ align-items:flex-start
+}
+.portfolio-obrazek{
+width: 450px;
+height:350px;
+
+}
+.portfolio-obrazek img {
+    width: 100%;          /* "Buď široký jen jako tvůj rodič (.obrazek-wrapper)" */
+    height: 100%;         /* Vyplň výšku */
+    object-fit: cover;    /* Ořízni se, nedeformuj se */
+    display:block;
+    border-radius:10px;
+}
+ .portfolio-text{
+    max-width:1100px;
+
+}
+.portfolio-text p, h2, ::after{
+text-align:left;
+}
+
+
 
 /* --- RESPONZIVITA (MOBIL) --- */
 @media (max-width: 750px) {
+    .projekt-layout {
+gap:var(--spacing-25)
+
+
+    }
     
+    
+    .portfolio-text p, h2, h2::after{
+text-align:center;
+}
+.portfolio-text p, h2, h2::after{
+width: 380px;
+margin: 10px auto;
+}
+.portfolio-kontejner {
+    flex-direction: column;
+    align-items: center;
+    padding:var(--spacing-10);
+    gap:var(--spacing-30);
+}
 .hero-sekce {
         
         height: auto; 
@@ -159,6 +220,7 @@ font-size:var(--font-size-m);
     .header.active {
         background: var(--secondary-transparent);
     }
+    
 }
 
 @keyframes fadeIn {
@@ -167,43 +229,3 @@ font-size:var(--font-size-m);
 }
 
 
-.projekt-layout {
-   grid-column:1/-1;
-   grid-row:1/3; 
-    display: flex;
-    margin:auto;
-    margin-top:var(--spacing-150);
-   
-
-}
-.portfolio-kontejner {
-
-display:flex;
-   align-items: center;
-   justify-content: center; 
-   gap:var(--spacing-75);
-   padding:var(--spacing-30);
-  border-radius:10px;
-  box-shadow:rgba(0,0,0,0.25) 0px 4px 15px;
- align-items:flex-start
-}
-.portfolio-obrazek{
-width: 500px;
-height:400px;
-
-}
-.portfolio-obrazek img {
-    width: 100%;          /* "Buď široký jen jako tvůj rodič (.obrazek-wrapper)" */
-    height: 100%;         /* Vyplň výšku */
-    object-fit: cover;    /* Ořízni se, nedeformuj se */
-    display:block;
-    border-radius:10px;
-}
- .portfolio-text{
-    max-width:1100px;
-
-}
-.portfolio-text p, h2{
-text-align:left;
-
-}
