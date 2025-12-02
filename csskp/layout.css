@@ -86,7 +86,7 @@
 .main {
     grid-column: 1/-1;
     grid-row: 3;
-    padding: var(--spacing-25); /* Přidáno odsazení */
+    padding: var(--spacing-25); 
 }
 
 .footer {
@@ -94,9 +94,41 @@
     width: 100%;
     grid-row: 4;
     grid-column: 1/-1;
-    background-color: rgb(2, 56, 110);
-    justify-content: center;
+   background-color: rgb(255, 204, 0);
+    justify-content: space-evenly;
     
+    
+    
+}
+.footer-col{
+margin:0;
+padding: 0;
+
+}
+
+
+
+
+.kontakty a,
+.fakturacni-info a {
+    color:white;
+    text-decoration: none;
+    transition: color 0.75s;
+}
+
+
+.kontakty a:hover,
+.fakturacni-info a:hover {
+    color: black;
+}
+
+.varovani {
+    display: flex;
+    width: 100%;
+    grid-row: 5;
+    grid-column: 1/-1;
+     background-color: rgb(2, 56, 110);
+    justify-content: center;
 }
 .projekt-layout {
    grid-column:1/-1;
