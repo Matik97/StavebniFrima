@@ -100,28 +100,36 @@
 }
 .projekt-layout {
    grid-column:1/-1;
-   grid-row:1/3; 
+   grid-row:2/4; 
     display: flex;
     margin:auto;
     margin-top:var(--spacing-150);
    gap:var(--spacing-150);
-    flex-direction: column
+    flex-direction: column;
+    background-color: var(--bg-light);
 
 }
 .portfolio-kontejner {
-
+overflow: hidden;
 display:flex;
    align-items: center;
-   justify-content: center; 
+   justify-content: start; 
    padding:var(--spacing-30);
    gap:var(--spacing-75);
   border-radius:10px;
   box-shadow:rgba(0,0,0,0.25) 0px 4px 15px;
- align-items:flex-start
+ align-items:flex-start;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .portfolio-obrazek{
 width: 450px;
 height:350px;
+position: relative;
+transition: transform 0.4s ease-in-out;
+
+}
+.portfolio-obrazek:hover{
+transform:scale(1.1);
 
 }
 .portfolio-obrazek img {
@@ -133,11 +141,55 @@ height:350px;
 }
  .portfolio-text{
     max-width:1100px;
-
 }
+.portfolio-kontejner:hover{
+transform: translateY(-5px); /* Karta se posune o 5px nahoru */
+    box-shadow: rgba(0,0,0,0.2) 0px 10px 25px;
+}
+
 .portfolio-text p, h2, ::after{
 text-align:left;
 }
+.stitek {
+    position: absolute; /* Vytrhne ho z textu a dovolí posouvat */
+    top: 10px;          /* 20px odshora */
+    left: 10px;         /* 20px zleva */
+    background-color: var(--main-dark); /* Modrá barva (nebo dejte 'red') */
+    color: white;       /* Bílé písmo */
+    padding: 5px 15px;  /* Vnitřní odsazení */
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase; /* Všechna písmena velká */
+    letter-spacing: 1px;       /* Rozestup písmen */
+    border-radius: 4px;        /* Kulaté rohy */
+    z-index: 10;               /* Aby byl vždy NAD obrázkem */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Malý stín */
+}
+.projekt-nadpis{
+display:flex;
+flex-direction:column;
+grid-row:1;
+grid-column:1/-1;
+margin-top:var(--spacing-150);
+padding:0px;
+text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -145,11 +197,7 @@ text-align:left;
 @media (max-width: 750px) {
     .projekt-layout {
 gap:var(--spacing-25)
-
-
     }
-    
-    
     .portfolio-text p, h2, h2::after{
 text-align:center;
 }
@@ -164,12 +212,8 @@ margin: 10px auto;
     gap:var(--spacing-30);
 }
 .hero-sekce {
-        
-        height: auto; 
-        
-       
+        height: auto;
         min-height: 60vh; 
-      
         align-items: center;
         justify-content: center;
         padding: var(--spacing-40) 0; /* Přidáme polstrování nahoře a dole, aby text nebyl nalepený */
@@ -212,7 +256,7 @@ font-size:var(--font-size-m);
     .header.active .nav-left,
     .header.active .nav-right {
         display: block;
-        animation: fadeIn 0.5s ease;
+        animation: fadeIn 5s ease;
        
     }
     

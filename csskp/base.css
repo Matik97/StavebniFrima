@@ -31,6 +31,8 @@
     --main-dark: RGB(0, 38, 77); 
     --main-light: RGB(0, 82, 162); 
     
+    --bg-light:#f4f7f6;
+
     --light: rgb(255, 255, 255);
     --secondary-transparent: rgba(0, 0, 0, 0.67);
     --light-transparent: rgba(255, 255, 255, 0.5);
