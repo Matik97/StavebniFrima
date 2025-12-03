@@ -69,7 +69,7 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    z-index: -2;
+    z-index: 1;
 }
 
 .hero-text {
@@ -110,16 +110,18 @@ padding: 0;
 
 
 
-.footer-col a, p, h4
-.footer-col a, p, h4 {
+.footer-col a
+.footer-col p
+.footer-col h4
+{
     justify-self: center;
     color:white;
     text-decoration: none;
     transition: color 0.75s;
 }
 
-.footer-col a:hover,
-.footer-col a:hover {
+.footer-col a:hover
+{
     color: black;
 }
 
@@ -136,10 +138,9 @@ padding: 0;
    grid-row:2/4; 
     display: flex;
     margin:auto;
-    margin-top:var(--spacing-150);
+    margin-top:var(--spacing-75);
    gap:var(--spacing-150);
     flex-direction: column;
-    background-color: var(--bg-light);
 
 }
 .portfolio-kontejner {
@@ -153,13 +154,14 @@ display:flex;
   box-shadow:rgba(0,0,0,0.25) 0px 4px 15px;
  align-items:flex-start;
  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ background-color:var(--light);
 }
 .portfolio-obrazek{
 width: 450px;
 height:350px;
 position: relative;
 transition: transform 0.4s ease-in-out;
-
+flex-shrink:0;
 }
 .portfolio-obrazek:hover{
 transform:scale(1.1);
@@ -180,7 +182,9 @@ transform: translateY(-5px); /* Karta se posune o 5px nahoru */
     box-shadow: rgba(0,0,0,0.2) 0px 10px 25px;
 }
 
-.portfolio-text p, h2, ::after{
+.portfolio-text p 
+.portfolio-text h2
+.portfolio-text ::after{
 text-align:left;
 color:var(--dark)
 }
@@ -214,6 +218,14 @@ text-align:center;
 
 
 
+/* --- RESPONZIVITA (500PX) --- */
+@media (max-width: 500px) {
+.portfolio-obrazek{
+width:350px;
+height:250px;
+}
+
+}
 
 
 
@@ -227,17 +239,21 @@ text-align:center;
 
 
 
-/* --- RESPONZIVITA (MOBIL) --- */
+/* --- RESPONZIVITA (750PX) --- */
 @media (max-width: 750px) {
     .projekt-layout {
 gap:var(--spacing-25)
     }
-    .portfolio-text p, h2, h2::after{
+    .portfolio-text p
+    .portfolio-text h2 
+    .portfolio-text::after{
 text-align:center;
-}
-.portfolio-text p, h2, h2::after{
 width: 380px;
 margin: 10px auto;
+}
+.portfolio-text ::after{
+width:250px;
+justify-self:center;
 }
 .portfolio-kontejner {
     flex-direction: column;
@@ -290,7 +306,7 @@ font-size:var(--font-size-m);
     .header.active .nav-left,
     .header.active .nav-right {
         display: block;
-        animation: fadeIn 5s ease;
+        animation: fadeIn 1.25s ease;
        
     }
     
@@ -300,13 +316,20 @@ font-size:var(--font-size-m);
     }
 .footer-col h4
 {
-  font-size:var(--font-size-l) ;
+  font-size:var(--font-size-m) ;
 }
 .footer-col p
 {
-  font-size:var(--font-size-s) ;
+  font-size:var(--font-size-xs) ;
 }
-
+.footer {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-10);
+    
+    
+    
+}
 }
 
 @keyframes fadeIn {
