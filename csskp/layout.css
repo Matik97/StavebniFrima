@@ -496,6 +496,7 @@ font-size:var(--font-size-m);
     .header.active {
         background: var(--secondary-transparent);
     }
+
 .footer-col h4
 {
   font-size:var(--font-size-m) ;
@@ -503,6 +504,9 @@ font-size:var(--font-size-m);
 .footer-col p
 {
   font-size:var(--font-size-xs) ;
+}
+.footer-col{
+text-align: center;
 }
 .footer {
     flex-direction: column;
