@@ -294,9 +294,7 @@ text-align:center;
 .sirka-50 { width: calc(50% - 15px); }
 .sirka-60 { width: calc(60% - 15px); }
 .sirka-40 { width: calc(40% - 15px); }
-
-
-
+.sirka-75 {width: calc(75% - 15px);}
 
 /* Aplikace animace */
 .animace-zleva {
@@ -361,11 +359,26 @@ text-align:center;
     flex-direction: column;
     gap: 30px; /* Mezera mezi řádky */
     width: 100%; /* Roztažení přes celou obrazovku */
-    margin: var(--spacing-125) 0;
+    margin-top: var(--spacing-125) 0;
     padding-bottom:var(--spacing-20);
     overflow-x: hidden; /* Zabrání vodorovnému posuvníku při příletu */
 }
+.radek .karta-vpravo {
+    margin-left: auto !important;  /* Tímto se "odstrčí" od levého kraje */
+    margin-right: 0 !important;    /* A přilepí se doprava */
+    text-align: left !important;   /* Text zarovnáme doleva, aby se dobře četl */
+    align-items: flex-start !important; /* Nadpisy a tlačítka doleva */
+    border-radius: 10px 0 0 10px;  /* Hranatý roh vpravo */
+}
 
+/* 2. Karta přilepená VLEVO */
+.radek .karta-vlevo {
+    margin-right: auto !important; /* "Odstrčí" se od pravého kraje */
+    margin-left: 0 !important;     /* A přilepí se doleva */
+    text-align: left !important;
+    align-items: flex-start !important;
+    border-radius: 0 10px 10px 0;  /* Hranatý roh vlevo */
+}
 
 
 
@@ -495,6 +508,12 @@ font-size:var(--font-size-m);
     align-items: center;
     gap: var(--spacing-10); 
 }
+.kontakty-kontejner {
+gap:0;
+}
+
+
+
 .radek {
         flex-direction: column; /* Pod sebe */
         padding: 0 5px; /* Odsazení od krajů mobilu */
@@ -502,7 +521,7 @@ font-size:var(--font-size-m);
     }
 
     .karta {
-        width: 100%; /* Plná šířka */
+        width: calc(100% - 20px); /* Plná šířka */
         margin: 0 0 20px 0 ; /* Reset marginů */
         border-radius: 10px; /* Všude kulaté */
         /* Reset zarovnání na střed */
@@ -527,14 +546,15 @@ font-size:var(--font-size-m);
     justify-self:center;
 }
 .radek .karta:first-child,
- .radek .karta:last-child
+.radek .karta:last-child
 {
     align-items: flex-start; 
     text-align: left;
+margin:var(--spacing-10) var(--spacing-10);
 }
 
 .mapa-wrapper{
-width: calc(100% - 10px);
+width: calc(100% - 30px);
 justify-self: center;
 }
 .kontaktni-formular input,
@@ -542,7 +562,27 @@ justify-self: center;
 {
     width: calc(100% - 40px);             
 }
+.radek h3
+{
+font-size:var(--font-size-xl)
 }
+.radek p
+{
+font-size:var(--font-size-m);
+text-align:left;
+}
+.sirka-75 {
+        width:calc(100% - 20px);
+    }
+    .karta-vpravo, .karta-vlevo {
+        margin: 0 0 20px 0; /* Reset mezer */
+        border-radius: 10px; /* Všude kulaté rohy */
+    }
+
+
+
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-100px); }
     to { opacity: 1; transform: translateY(0); }
