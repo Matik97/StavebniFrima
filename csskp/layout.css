@@ -535,13 +535,14 @@ font-size:var(--font-size-m);
 
 .mapa-wrapper{
 width: calc(100% - 10px);
+justify-self: center;
 }
 .kontaktni-formular input,
 .kontaktni-formular textarea
 {
     width: calc(100% - 40px);             
 }
-
+}
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-100px); }
     to { opacity: 1; transform: translateY(0); }
