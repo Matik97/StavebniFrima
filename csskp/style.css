@@ -7,7 +7,6 @@
 @import "theming.css" layer(theming);
 @import "layout.css" layer(layout);
 @import "components-responsive.css" layer(components-responsive);
-@import "utilities-responsive.css" layer(utilities-responsive);
 
 
 

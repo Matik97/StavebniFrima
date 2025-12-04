@@ -107,15 +107,11 @@
     grid-row: 4;
     grid-column: 1/-1;
    background-color: var(--gradient-dark );
-    justify-content: space-evenly;
-    
-    
-    
+    justify-content: space-evenly;   
 }
 .footer-col{
 margin:0;
-padding: 0;
-
+padding:0;
 }
 
 .footer-col a{
@@ -148,8 +144,12 @@ padding: 0;
     width: 100%;
     grid-row: 5;
     grid-column: 1/-1;
-     background-color: rgb(2, 56, 110);
+     background-color: var(--warning);
     justify-content: center;
+}
+.varovani p{
+color:var(--light);
+
 }
 .projekt-layout {
    grid-column:1/-1;
@@ -410,28 +410,26 @@ font-size:var(--font-size-s)
 }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* --- RESPONZIVITA (750PX) --- */
 @media (max-width: 750px) {
     .projekt-layout {
 gap:var(--spacing-25)
     }
+    
+    
+    .spany{
+justify-self: center;
+    }
+    
     .portfolio-text p,
     .portfolio-text h2, 
     .portfolio-text::after{
-text-align:center;
-width: 380px;
-margin: 10px auto;
+text-align: center;
+        width: 100%;        
+        max-width: 380px;  
+        padding: 0 10px;   
+        box-sizing: border-box; 
+        margin: 10px auto;
 }
 .portfolio-text ::after{
 width:250px;

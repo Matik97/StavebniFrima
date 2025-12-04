@@ -45,6 +45,8 @@ scroll-margin-top:var(--spacing-150);
 
     --dark:rgb(0,0,0);
 
+--warning: RGB(255,0,0);
+
     --main-dark: RGB(0, 38, 77); 
     --main-light: RGB(0, 82, 162); 
     
