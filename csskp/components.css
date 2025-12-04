@@ -40,20 +40,7 @@
 }
 
 
-@media (max-width: 750px) {
-    .menu-btn {
-        display: flex;
-    }
-    .header.active .menu-btn span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 8px);
-    }
-    .header.active .menu-btn span:nth-child(2) {
-        opacity: 0;
-    }
-    .header.active .menu-btn span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -8px);
-    }
-}
+
 /* Celkový obal pro všechny projekty */
 
 .section-separator {
@@ -73,4 +60,78 @@ h2::after {
     margin-top: 10px;
     
     left: 0;
+}
+.cta-button {
+    background-color: var(--main-dark); /* Tmavě modrá */
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px; /* Kulaté tlačítko */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Stín, aby "levitovalo" */
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--main-light); /* Světlejší při najetí */
+    transform: translateY(-3px); /* Jemně nadskočí */
+}
+.kontaktni-formular {
+    display: flex;
+    flex-direction: column; /* Prvky pod sebou */
+    width: 100%;
+    gap: 15px;              /* Mezery mezi políčky */
+}
+
+/* Vzhled políček (Inputy a Textarea) */
+.kontaktni-formular input,
+.kontaktni-formular textarea {
+    width: 100%;
+    padding: 12px 15px;
+    
+    /* Vzhled ladící k "Tech" stylu */
+    border: 1px solid #CBD5E1; 
+    background-color: rgba(255, 255, 255, 0.7); /* Jemně průsvitná bílá */
+    border-radius: 6px;
+    
+    font-family: inherit;   /* Převezme font stránky */
+    font-size: 0.95rem;
+    color: var(--dark);     /* Barva textu */
+    
+    box-sizing: border-box; /* Padding nezvětšuje šířku */
+    outline: none;          /* Zruší defaultní modrý obrys prohlížeče */
+    transition: all 0.3s ease;
+}
+
+/* Efekt při kliknutí do políčka */
+.kontaktni-formular input:focus,
+.kontaktni-formular textarea:focus {
+    border-color: var(--main-dark, #0F172A); 
+    background-color: #FFFFFF; /* Při psaní úplně zbělá */
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1); 
+}
+
+/* Vzhled tlačítka */
+.kontaktni-formular button {
+    padding: 12px 25px;
+    background-color: var(--main-dark, #0F172A); 
+    color: white;
+    
+    border: none;
+    border-radius: 6px;
+    
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    
+    align-self: flex-start; /* Tlačítko vlevo */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.kontaktni-formular button:hover {
+    background-color: #334155; 
+    transform: translateY(-2px); /* Jemné nadskočení */
 }

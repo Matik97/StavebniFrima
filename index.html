@@ -14,7 +14,7 @@
                 
                 
 
-                <a href="HTMLPage1.html" class="nav-logo">
+                <a href="index.html" class="nav-logo">
                     <img src="IMG/Logo.gif" alt="Logo">
                 </a>
             
@@ -27,8 +27,8 @@
 
                 <nav class="nav-right">
                     <ul>
-                        <li><a href="/login" class="button">Kontakty</a></li>
-                        <li><a href="/registrace" class="button">O Nás</a></li>
+                        <li><a href="Kontakty.html" class="button">Kontakty</a></li>
+                        <li><a href="Onas.html" class="button">O Nás</a></li>
                         <li><a href="Projekty.html" class="button">Projekty</a></li>
                     </ul>
                 </nav>
@@ -36,13 +36,21 @@
         </div>
 
         <div class="hero-sekce">
-            <nav class="hero-layout">
-                   <div class="hero-text">
-                <h1>Stavební firma <br>Vacek</h1>
-                <p>Stavíme sny do reality</p>
-              </div> 
-            </nav>
-        </div>            
+    <nav class="hero-layout">
+        
+        <div class="hero-wrapper">
+            
+            <div class="hero-text">
+                <h1>Stavíme domov,<br>ne jen dům</h1>
+                <p>Spolehlivá stavební firma s důrazem na kvalitu. Od projektu až po klíče.</p>
+            </div>
+
+            <a href="Projekty.html" class="cta-button">Naše projekty</a>
+            
+        </div>
+
+    </nav>
+</div>        
         
         <div class="main">
             <p>
@@ -50,11 +58,32 @@
             </p>
         </div>
 
-        <div class="varovani">
+        <div class="footer">    
+<div class="footer-col">
+<h4>KONTAKTNÍ ÚDAJE</h4>
+<p>Matyáš Vacek<br></p>
+<p><a href="tel:+420722955086">+420 987 654 321</a></p>
+<p><a href="mailto:matyas.vacek@uhk.cz">matyas.vacek@uhk.cz</a></p>
+</div>
+
+<div class="footer-col">
+<h4>FAKTURAČNÍ ÚDAJE</h4>
+<p>IČO: 12345678<br></p>
+<p>Sídlo:Univerzita Hradec Králové</p>
+<p><a href="https://maps.app.goo.gl/mKtctjvvvBPHW8ft8">Hradecká 1249/6, 500 03 Hradec Králové 3</a></p>
+
+</div>
+
+</div>
+ <div class="varovani">
             <p>Jedná se o studentský projekt</p>
         </div>
+        
+</div>
 
-    </div>
+
+
+
 
     <script>
         const menuToggle = document.getElementById('menu-toggle');
@@ -64,7 +93,6 @@
             mainHeader.classList.toggle('active');
         });
     </script>
- 
+ </div>
 </body>
-
 </html>

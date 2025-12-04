@@ -58,7 +58,7 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 1fr auto 1fr;
 }
 
@@ -71,16 +71,28 @@
     height: 100vh;
     z-index: 1;
 }
-
-.hero-text {
+.hero-wrapper {
     grid-column: 2/3;
     grid-row: 2/3;
+    
+    /* Seřadí bublinu a tlačítko pod sebe */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Vycentruje je vodorovně */
+    gap: 20px; /* Mezera mezi bublinou a tlačítkem */
+    
+    margin: var(--spacing-20);
+}
+
+.hero-text {
+
     backdrop-filter: blur(8px);
     background: var(--light-transparent);
     color:var(--dark);
     padding: var(--spacing-50);
     border-radius: var(--radius-20);
-    margin: var(--spacing-20);
+    margin:0;
+    text-align: center;
 }
 
 .main {
@@ -94,7 +106,7 @@
     width: 100%;
     grid-row: 4;
     grid-column: 1/-1;
-   background-color: rgb(255, 204, 0);
+   background-color: var(--gradient-dark );
     justify-content: space-evenly;
     
     
@@ -106,12 +118,22 @@ padding: 0;
 
 }
 
+.footer-col a{
+    text-decoration: underline;
+    text-decoration-color:transparent;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px; 
+    transition: text-decoration-color 1s ease;
+    justify-self: center;
+    color:var(--light);
+}
+.footer-col a:hover{
+    text-decoration-color: var(--light);
+}
 
 
 
-
-.footer-col a
-.footer-col p
+.footer-col p,
 .footer-col h4
 {
     justify-self: center;
@@ -120,10 +142,6 @@ padding: 0;
     transition: color 0.75s;
 }
 
-.footer-col a:hover
-{
-    color: black;
-}
 
 .varovani {
     display: flex;
@@ -182,11 +200,11 @@ transform: translateY(-5px); /* Karta se posune o 5px nahoru */
     box-shadow: rgba(0,0,0,0.2) 0px 10px 25px;
 }
 
-.portfolio-text p 
-.portfolio-text h2
+.portfolio-text p, 
+.portfolio-text h2,
 .portfolio-text ::after{
 text-align:left;
-color:var(--dark)
+color:var(--dark);
 }
 .stitek {
     position: absolute; /* Vytrhne ho z textu a dovolí posouvat */
@@ -212,6 +230,140 @@ margin-top:var(--spacing-150);
 padding:0px;
 text-align:center;
 }
+/* --- HLAVNÍ OBAL (FULL WIDTH) --- */
+.kontakty-kontejner {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Mezera mezi řádky */
+    width: 100%; /* Roztažení přes celou obrazovku */
+    margin: var(--spacing-125) 0;
+    padding-bottom:var(--spacing-20);
+    overflow-x: hidden; /* Zabrání vodorovnému posuvníku při příletu */
+}
+
+/* --- ŘÁDEK --- */
+.radek {
+    display: flex;
+    justify-content: center; /* Drží karty u středu */
+    width: 100%;
+}
+
+/* --- VZHLED KARTY --- */
+.karta {
+    background: var(--gradient-light);
+    padding: 40px; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0; /* Zabrání deformaci */
+    position: relative; /* Nutné pro animaci */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.karta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+/* --- SPECIFICKÉ ÚPRAVY PRO LEVOU A PRAVOU STRANU --- */
+}
+/* Levá karta v řádku */
+.radek .karta:first-child {
+    border-radius: 0 10px 10px 0; /* Vlevo hranaté (uříznuté), vpravo kulaté */
+    margin-right: 15px; /* Polovina mezery */
+    
+    /* Zarovnání textu doprava (k mezeře) */
+    align-items: flex-end; 
+    text-align: right;
+    padding-right: 5vw; /* Aby text nebyl nalepený úplně na střed */
+}
+
+/* Pravá karta v řádku */
+.radek .karta:last-child {
+    border-radius: 10px 0 0 10px; /* Vlevo kulaté, vpravo hranaté (uříznuté) */
+    margin-left: 15px; /* Polovina mezery */
+    
+    /* Zarovnání textu doleva (k mezeře) */
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5vw;
+}
+
+/* --- ŠÍŘKY KARET (Počítáno z šířky okna - 15px mezera) --- */
+.sirka-50 { width: calc(50% - 15px); }
+.sirka-60 { width: calc(60% - 15px); }
+.sirka-40 { width: calc(40% - 15px); }
+
+
+
+
+/* Aplikace animace */
+.animace-zleva {
+    animation: prilet-zleva 1s ease-out forwards;
+}
+
+.animace-zprava {
+    animation: prilet-zprava 1s ease-out forwards;
+}
+
+/* --- STYLY TEXTU --- */
+.karta h3 {
+    margin: 0 0 15px 0;
+    color: var(--main-dark, #00264d);
+}
+.odkaz {
+    color: var(--main-dark, #00264d);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
+}
+.meta-info {
+    color: gray;
+    margin-top: 10px;
+}
+.radek-kontakt {
+    margin-top: 30px; /* Oddělení od řádku nad tím */
+}
+
+/* --- STYLY PRO MAPU --- */
+.mapa-wrapper {
+    width: 100%;
+    height: 300px;         /* Pevná výška mapy */
+    border-radius: 8px;    /* Zakulacené rohy mapy */
+    overflow: hidden;      /* Oříznutí obsahu co přečuhuje */
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1); /* Vnitřní stín */
+    background-color: #e5e7eb; /* Podkladová šedá, než se mapa načte */
+}
+
+.mapa-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;             /* Odstraní ošklivý rámeček iframu */
+    display: block;        /* Odstraní mezeru pod iframem */
+}
+.kontaktni-formular input,
+.kontaktni-formular textarea,
+.mapa-wrapper iframe,
+.mapa-wrapper {
+    width: 100%;             /* Roztáhni se přesně na šířku karty */
+    max-width: 100%;         /* Nikdy nebuď širší než táta (karta) */
+    
+    /* TOHLE JE NEJDŮLEŽITĚJŠÍ ŘÁDEK: */
+    box-sizing: border-box;  /* Započítá padding a rámeček DOVNITŘ šířky, ne ven */
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -221,12 +373,17 @@ text-align:center;
 /* --- RESPONZIVITA (500PX) --- */
 @media (max-width: 500px) {
 .portfolio-obrazek{
-width:350px;
-height:250px;
+width:300px;
+height:200px;
 }
+.projekt-nadpis h1{
+font-size:var(--font-size-l)
 
 }
-
+.projekt-nadpis p{
+font-size:var(--font-size-s)
+}
+}
 
 
 
@@ -244,8 +401,8 @@ height:250px;
     .projekt-layout {
 gap:var(--spacing-25)
     }
-    .portfolio-text p
-    .portfolio-text h2 
+    .portfolio-text p,
+    .portfolio-text h2, 
     .portfolio-text::after{
 text-align:center;
 width: 380px;
@@ -269,7 +426,7 @@ justify-self:center;
         padding: var(--spacing-40) 0; /* Přidáme polstrování nahoře a dole, aby text nebyl nalepený */
 }
 h1{
-font-size:var(--font-size-2xl) ;
+font-size:var(--font-size-xl) ;
 }
 p{
 font-size:var(--font-size-m);
@@ -325,9 +482,43 @@ font-size:var(--font-size-m);
 .footer {
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-10);
+    gap: var(--spacing-10); 
+}
+.radek {
+        flex-direction: column; /* Pod sebe */
+        padding: 0 20px; /* Odsazení od krajů mobilu */
+        box-sizing: border-box;
+    }
+
+    .karta {
+        width: 100%; /* Plná šířka */
+        margin: 0 0 20px 0 !important; /* Reset marginů */
+        border-radius: 10px; /* Všude kulaté */
+        /* Reset zarovnání na střed */
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+    }
     
-    
+    /* Vypnutí animací na mobilu (volitelné, někdy to zlobí) */
+    .animace-zleva, .animace-zprava {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    .sirka-40, .sirka-60 {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .radek-kontakt {
+    margin-top: 30px; /* Oddělení od řádku nad tím */
+    margin:0 10px; 
+    justify-self:center;
+}
+.radek .karta:first-child {
+    align-items: flex-start; 
+    text-align: left;
     
 }
 }
@@ -337,4 +528,24 @@ font-size:var(--font-size-m);
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes prilet-zleva {
+    from { 
+        opacity: 0; 
+        margin-left: -100px;
+    }
+    to { 
+        opacity: 1; 
+        margin-left: 0; 
+    }
+}
 
+@keyframes prilet-zprava {
+    from { 
+        opacity: 0; 
+        margin-right: -100px; 
+    }
+    to { 
+        opacity: 1; 
+        margin-right: 0; 
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="csskp/style.css" />
+    <title>Stavební firma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+      <div class="kontejner">
+        <div class="header" id="main-header">
+            <div class="header-nav">
+                
+                
+
+                <a href="index.html" class="nav-logo">
+                    <img src="IMG/Logo.gif" alt="Logo">
+                </a>
+            
+              
+                <button class="menu-btn" id="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav-right">
+                    <ul>
+                        <li><a href="Kontakty.html" class="button">Kontakty</a></li>
+                        <li><a href="/registrace" class="button">O Nás</a></li>
+                        <li><a href="Projekty.html" class="button">Projekty</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+<div class="kontakty-kontejner">
+    
+    <div class="radek">
+        <div class="karta sirka-50 animace-zleva">
+            <h3>📞 Zavolejte nám</h3>
+            <p>Jsme tu pro vás každý všední den od 8:00 do 17:00.</p>
+            <a href="tel:+420987654321" class="odkaz">+420 987 654 321</a>
+        </div>
+
+        <div class="karta sirka-50 animace-zprava">
+            <h3>📧 Napište nám</h3>
+            <p>Preferujete elektronickou komunikaci? Ozveme se zpět.</p>
+              <a href="#Mail-form" class="odkaz">Přejít na formulář →</a>
+        </div>
+    </div>
+
+    <div class="radek">
+        <div class="karta sirka-60 animace-zleva">
+            <h3>🏢 Sídlo firmy & Fakturace</h3>
+            <p><strong>Stavební firma Vacek s.r.o.</strong><br>
+            Hradecká 1249/6, 500 03 Hradec Králové 3</p>
+            <span class="meta-info">IČO: 12345678</span>
+        </div>
+
+        <div class="karta sirka-40 animace-zprava">
+            <h3>📍 Kde nás najdete</h3>
+            <p>Parkování zajištěno ve dvoře firmy.</p>
+            <a href="#mapa" class="odkaz">Otevřít na mapě →</a>
+        </div>
+    </div>
+
+
+
+<div class="radek radek-kontakt">
+    <div class="karta sirka-40 animace-zleva" id="mapa">
+        <h3>Kde nás najdete</h3>
+        <div class="mapa-wrapper">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.72387926667!2d15.82745887684438!3d50.203692005099924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c2b3387ae60bd%3A0x8365ae5997d44176!2sFakulta%20informatiky%20a%20managementu%20Univerzity%20Hradec%20Kr%C3%A1lov%C3%A9!5e0!3m2!1scs!2scz!4v1764806921466!5m2!1scs!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+        <p class="meta-info">Otevřeno Po-Pá: 8:00 - 17:00</p>
+    </div>
+    
+
+    <div class="karta sirka-40 animace-zprava" id="Mail-form">
+        <h3>Napište nám</h3>
+        <form class="kontaktni-formular" action="#" method="post">
+            <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+            <input type="email" name="email" placeholder="Váš email" required>
+            <textarea name="zprava" placeholder="Vaše zpráva..." rows="4" required></textarea>
+            <button type="submit">Odeslat zprávu</button>
+        </form>
+    </div>
+
+</div>
+</div>
+        
+
+        <div class="footer">    
+<div class="footer-col">
+<h4>KONTAKTNÍ ÚDAJE</h4>
+<p>Matyáš Vacek<br></p>
+<p><a href="tel:+420722955086">+420 987 654 321</a></p>
+<p><a href="mailto:matyas.vacek@uhk.cz">matyas.vacek@uhk.cz</a></p>
+</div>
+
+<div class="footer-col">
+<h4>FAKTURAČNÍ ÚDAJE</h4>
+<p>IČO: 12345678<br></p>
+<p>Sídlo:Univerzita Hradec Králové</p>
+<p><a href="https://maps.app.goo.gl/mKtctjvvvBPHW8ft8">Hradecká 1249/6, 500 03 Hradec Králové 3</a></p>
+
+</div>
+
+</div>
+ <div class="varovani">
+            <p>Jedná se o studentský projekt</p>
+        </div>
+        
+</div>
+
+
+
+
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainHeader = document.getElementById('main-header');
+
+        menuToggle.addEventListener('click', () => {
+            mainHeader.classList.toggle('active');
+        });
+    </script>
+ </div>
+</body>
+</html>

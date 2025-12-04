@@ -5,8 +5,11 @@ html, body {
         linear-gradient(90deg, #e1e8ed 1px, transparent 1px);
     background-size: 40px 40px; 
     background-position: center top;
+    scroll-behavior: smooth;
     }
-
+#mapa, #Mail-form {
+scroll-margin-top:var(--spacing-150);
+}
 
 
 
@@ -31,6 +34,7 @@ html, body {
     --spacing-50: 50px;
     --spacing-75: 75px;
     --spacing-100: 100px;
+    --spacing-125: 125px;
     --spacing-150: 150px;
     --spacing-250: 250px;
     
@@ -46,6 +50,9 @@ html, body {
     
     --bg-light:#f4f7f6;
 
+    --gradient-light:linear-gradient(135deg, #F1F5F9 0%, #CBD5E1 100%);
+    --gradient-dark:#0F172A;
+    
     --light: rgb(255, 255, 255);
     --secondary-transparent: rgba(0, 0, 0, 0.67);
     --light-transparent: rgba(255, 255, 255, 0.5);
@@ -94,3 +101,11 @@ nav ul li a {
         text-decoration: none;
      color:var(--dark)
       }
+      iframe {
+    width: 100%;
+    max-width: 100%;
+}
+input, textarea {
+    width: 100%;
+    box-sizing: border-box; 
+}
