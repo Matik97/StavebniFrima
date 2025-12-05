@@ -29,8 +29,10 @@
 .animace-zprava {
     animation: prilet-zprava 1s ease-out forwards;
 }
-.vlevo { left: 0; }
-.vpravo { right: 0; }
+.vlevo { 
+    left: 0; }
+.vpravo { 
+    right: 0; }
 
 .text-blok{
 text-align: justify;

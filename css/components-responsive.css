@@ -22,29 +22,27 @@
         width: calc(100% - 30px);
         height: calc(100% - 100px);
     }
-    .recenze-container { padding: 0; }
+    .recenze-container {
+        padding-bottom: 80px;
+        position: relative;   
+    }
     .recenze-karta { padding: 30px 20px; }
     .sipka {
+        position: absolute; 
+        top: auto;          
+        bottom: 10px;       
         background-color: var(--main-light); 
         color: var(--light);
-        top: 120%;
-        bottom: -70px; 
+        transform: none;
     }
-    .vlevo {
-       
-        left: auto; 
-        
-        
-        right: calc(50% + 10px); 
-    }
-
-
-    .vpravo {
-    
+    .sipka.vlevo {
+        left: calc(50% - 60px); /* Posuneme doleva od středu */
         right: auto;
-        
-    
-        left: calc(50% + 10px); 
+    }
+
+    .sipka.vpravo {
+        right: calc(50% - 60px); /* Posuneme doprava od středu */
+        left: auto;
     }
     
     .recenze-sekce { padding-bottom: 100px; } 
@@ -188,7 +186,8 @@ font-size:var(--font-size-xl);
     .sirka-75 {
         width: calc(100% - 20px);
     }
-    .karta-vpravo, .karta-vlevo {
+    .karta-vpravo, .karta-
+     {
         margin: 0 0 var(--spacing-20) 0;
         border-radius: var(--radius-10);
     }
