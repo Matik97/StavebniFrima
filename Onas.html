@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Stavební firma</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="Favico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="Favico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="Favico/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="css/style.css"/> 
+<meta charset="utf-8"/>
+<script src="script/script.js" defer></script>
+<title>Hlavní Stránka</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
       <div class="kontejner">
         <header class="header" id="main-header">
@@ -15,7 +19,7 @@
                 
 
                 <a href="index.html" class="nav-logo">
-                    <img src="IMG/Logo.gif" alt="Logo">
+                     <img src="IMG/Logo.png" alt="Logo">
                 </a>
             
               
@@ -39,12 +43,12 @@
     <div class="radek">
         <div class="karta sirka-75 karta-vpravo animace-zprava">
             <h3>📜 Jak to celé začalo</h3>
-            <p>
+            <p class="text-blok">
                 Příběh naší firmy se začal psát už v roce 1998. Tehdy jsme jako malá parta řemeslníků položili základní kámen našeho prvního rodinného domu. 
                 Neměli jsme velké kanceláře ani drahé stroje, ale měli jsme chuť pracovat rukama a dělat věci pořádně.
             </p>
             <br>
-            <p>
+           <p class="text-blok">
                 Dnes, o více než 25 let později, jsme sice vyrostli ve stabilní stavební společnost s moderním vybavením, 
                 ale naše kořeny a hodnoty zůstávají stejné. Stále věříme, že nejlepší vizitkou je spokojený soused, kterému jsme postavili dům.
             </p>
@@ -54,12 +58,12 @@
     <div class="radek">
         <div class="karta sirka-75 karta-vlevo animace-zleva">
             <h3>🔨 Na čem si zakládáme</h3>
-            <p>
+            <p class="text-blok">
                 Ve světě, kde se často hledí jen na rychlost a nejnižší cenu, my jdeme jinou cestou. 
                 Víme, že dům nestavíte na rok nebo dva, ale pro celé generace. Proto nikdy nešidíme materiály ani technologické postupy.
             </p>
             <br>
-            <p>
+            <p class="text-blok">
                 <strong>Férovost je pro nás klíčová.</strong> Co si domluvíme a podepíšeme, to platí. Žádné skryté poplatky, žádné nečekané vícepráce "jen tak". 
                 S klienty komunikujeme otevřeně od prvního výkresu až po předání klíčů.
             </p>
@@ -69,12 +73,12 @@
     <div class="radek">
         <div class="karta sirka-75 karta-vpravo animace-zprava">
             <h3>🤝 Náš tým a vize</h3>
-            <p>
+           <p class="text-blok">
                 Stavební firma Vacek není jen o cihlách a betonu, je to především o lidech. 
                 Jsme hrdí na svůj stálý tým zkušených zedníků, stavbyvedoucích a projektantů, kteří se ve svém oboru neustále vzdělávají.
             </p>
             <br>
-            <p>
+            <p class="text-blok">
                 Do budoucna se chceme více zaměřit na ekologické a nízkoenergetické stavby, které šetří nejen vaši peněženku, ale i přírodu. 
                 Pokud hledáte partnera, který vaše sny promění v pevnou realitu, jste na správné adrese.
             </p>
@@ -104,21 +108,6 @@
  <div class="varovani">
             <p>Jedná se o studentský projekt</p>
         </div>
-        
 </div>
-
-
-
-
-
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainHeader = document.getElementById('main-header');
-
-        menuToggle.addEventListener('click', () => {
-            mainHeader.classList.toggle('active');
-        });
-    </script>
- </div>
 </body>
 </html>

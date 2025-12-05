@@ -1,0 +1,37 @@
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes prilet-zleva {
+    from { opacity: 0; margin-left: -100px; }
+    to { opacity: 1; margin-left: 0; }
+}
+
+@keyframes prilet-zprava {
+    from { opacity: 0; margin-right: -100px; }
+    to { opacity: 1; margin-right: 0; }
+}
+.sirka-50 { width: calc(50% - 15px); }
+.sirka-60 { width: calc(60% - 15px); }
+.sirka-40 { width: calc(40% - 15px); }
+.sirka-75 { width: calc(75% - 15px); }
+
+.animace-zleva {
+    animation: prilet-zleva 1s ease-out forwards;
+}
+
+.animace-zprava {
+    animation: prilet-zprava 1s ease-out forwards;
+}
+.vlevo { left: 0; }
+.vpravo { right: 0; }
+
+.text-blok{
+text-align: justify;
+}

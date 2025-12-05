@@ -1,12 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Stavební firma</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="Favico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="Favico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="Favico/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="css/style.css"/> 
+<meta charset="utf-8"/>
+<script src="script/script.js" defer></script>
+<title>Hlavní Stránka</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
       <div class="kontejner">
         <header class="header" id="main-header">
@@ -15,7 +19,7 @@
                 
 
                 <a href="index.html" class="nav-logo">
-                    <img src="IMG/Logo.gif" alt="Logo">
+                    <img src="IMG/Logo.png" alt="Logo">
                 </a>
             
               
@@ -41,7 +45,7 @@
         <div class="hero-wrapper">
             
             <div class="hero-text">
-                <h1>Stavíme domov,<br>ne jen dům</h1>
+                <h1>Stavební firma<br> Vacek</h1>
                 <p>Spolehlivá stavební firma s důrazem na kvalitu. Od projektu až po klíče.</p>
             </div>
 
@@ -59,32 +63,32 @@
         <button class="sipka vlevo" onclick="zmenitRecenzi(-1)">&#10094;</button>
 
         <div class="recenze-karta aktivni">
-            <p class="text-recenze">"Skvělá spolupráce! Projekt byl odevzdán včas a výsledek předčil naše očekávání. Komunikace byla na jedničku."</p>
-            <h4 class="autor">- Jan Novák, Stavby s.r.o.</h4>
+            <p class="text-recenze">„S realizací našeho projektu jsme nadmíru spokojeni, firma odvedla precizní práci a dodržela dohodnutý rozpočet. Oceňuji především profesionální přístup a dodržení všech termínů.“</p>
+            <h4 class="autor">- Jan Novák, Výrava (Realizace rodinného domu)</h4>
             <div class="hvezdicky">★★★★★</div>
         </div>
 
         <div class="recenze-karta">
-            <p class="text-recenze">"Potřebovali jsme rychlý redesign a tohle bylo přesně ono. Moderní, čisté a funkční. Určitě doporučuji."</p>
-            <h4 class="autor">- Petr Svoboda, DesignStudio</h4>
+            <p class="text-recenze">„Rekonstrukce proběhla rychle a bez zbytečných komplikací, výsledek předčil naše očekávání. Komunikace s vedením stavby byla po celou dobu bezproblémová a věcná.“</p>
+            <h4 class="autor">- Petr Svoboda, Pardubice (Rekonstrukce bytu)</h4>
             <div class="hvezdicky">★★★★★</div>
         </div>
 
         <div class="recenze-karta">
-            <p class="text-recenze">"Profesionální přístup od začátku do konce. Oceňuji hlavně smysl pro detail a trpělivost při úpravách."</p>
-            <h4 class="autor">- Jana Malá, Květinářství U Jany</h4>
+            <p class="text-recenze">„Spolehlivá stavební firma, která si poradila i s náročnějšími technickými detaily stavby. Na čem jsme se domluvili, to platilo, a stavbu předali v perfektní kvalitě.“</p>
+            <h4 class="autor">- Jana Malá, Lhota pod Libčany (Majitelka nemovitosti)</h4>
             <div class="hvezdicky">★★★★☆</div>
         </div>
 
         <div class="recenze-karta">
-            <p class="text-recenze">"Kvalitní kód a přehledná struktura. Web se načítá bleskově. Díky za skvělou práci."</p>
-            <h4 class="autor">- Martin Dvořák, IT Solutions</h4>
+            <p class="text-recenze">„Vřele doporučuji, překvapil nás důraz na detail a pořádek na staveništi během celé realizace. Konečně řemeslníci, kteří u práce přemýšlejí a odvádějí ji poctivě.“</p>
+            <h4 class="autor">- Martin Dvořák, Praskačka</h4>
             <div class="hvezdicky">★★★★★</div>
         </div>
 
         <div class="recenze-karta">
-            <p class="text-recenze">"Spolupracujeme již dlouhodobě a nemůžeme si stěžovat. Spolehlivost je dnes vzácná."</p>
-            <h4 class="autor">- Alena Veselá, Marketing Guru</h4>
+            <p class="text-recenze">„Děkujeme za skvěle odvedenou práci, i přes drobné změny v projektu nám vyšli ve všem vstříc. Poměr ceny a kvality je u této firmy na vynikající úrovni.“</p>
+            <h4 class="autor">- Alena Veselá, Hradec Králové</h4>
             <div class="hvezdicky">★★★★★</div>
         </div>
 
@@ -121,43 +125,6 @@
 
 
 
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainHeader = document.getElementById('main-header');
-
-        menuToggle.addEventListener('click', () => {
-            mainHeader.classList.toggle('active');
-        }
-    )
-// Nastavíme počítadlo na první recenzi (index 1)
-    let indexRecenze = 1;
-    zobrazRecenzi(indexRecenze);
-
-    // Funkce pro posouvání (volaná tlačítky)
-    function zmenitRecenzi(n) {
-        zobrazRecenzi(indexRecenze += n);
-    }
-
-    // Hlavní funkce pro zobrazení
-    function zobrazRecenzi(n) {
-        let i;
-        let recenze = document.getElementsByClassName("recenze-karta");
-        
-        // Pokud dojdeme na konec, skočíme na začátek
-        if (n > recenze.length) {indexRecenze = 1}
-        
-        // Pokud jsme na začátku a dáme "zpět", skočíme na konec
-        if (n < 1) {indexRecenze = recenze.length}
-        
-        // 1. Skryjeme všechny recenze
-        for (i = 0; i < recenze.length; i++) {
-            recenze[i].classList.remove("aktivni");
-        }
-        
-        // 2. Zobrazíme jen tu aktuální (index - 1, protože pole začíná nulou)
-        recenze[indexRecenze - 1].classList.add("aktivni");
-    }
-    </script>
- </div>
+    
 </body>
 </html>

@@ -1,5 +1,198 @@
+@media (max-width: 500px) {
+    .projekt-nadpis h1 {
+        font-size: var(--font-size-l);
+    }
+    .projekt-nadpis p {
+        font-size: var(--font-size-s);
+    }
+    
+
+    
+}
 @media (max-width: 750px) {
-    .menu-btn {
+    .projekt-nadpis{
+   margin-top:var(--spacing-70);
+
+    }
+    
+    .projekt-layout {
+        gap: var(--spacing-25);
+    }
+    .portfolio-obrazek {
+        width: calc(100% - 30px);
+        height: calc(100% - 100px);
+    }
+    .recenze-container { padding: 0; }
+    .recenze-karta { padding: 30px 20px; }
+    .sipka {
+        background-color: var(--main-light); 
+        color: var(--light);
+        top: 120%;
+        bottom: -70px; 
+    }
+    .vlevo {
+       
+        left: auto; 
+        
+        
+        right: calc(50% + 10px); 
+    }
+
+
+    .vpravo {
+    
+        right: auto;
+        
+    
+        left: calc(50% + 10px); 
+    }
+    
+    .recenze-sekce { padding-bottom: 100px; } 
+    .spany {
+        justify-self: center;
+    }
+    .recenze-sekce h2{
+font-size:var(--font-size-xl);
+
+    }
+    
+    .portfolio-text p,
+    .portfolio-text h2, 
+    .portfolio-text::after {
+        text-align: center;
+        width: 100%;        
+        max-width: 380px;  
+        padding: 0 10px;   
+        box-sizing: border-box; 
+        margin: var(--spacing-10) auto;
+    }
+
+    .hero-sekce {
+        height: auto;
+        min-height: 60vh; 
+        align-items: center;
+        justify-content: center;
+        padding: var(--spacing-40) 0;
+    }
+    h1 {
+        font-size: var(--font-size-xl);
+    }
+    p {
+        font-size: var(--font-size-m);
+    }
+
+    .header-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: var(--spacing-10);
+    }
+
+    .nav-logo {
+        margin: 0;
+        order: 1;
+    }
+
+    .nav-left, .nav-right {
+        display: none; 
+        width: 100%;
+        order: 3;
+        text-align: center;
+        padding-top:  var(--spacing-20);
+    }
+
+    .nav-left ul, .nav-right ul {
+        flex-direction: column;
+        gap:var(--spacing-15);
+    }
+
+    .header.active .nav-left,
+    .header.active .nav-right {
+        display: block;
+        animation: fadeIn 1.25s ease;
+    }
+    
+    .header.active {
+        background: var(--secondary-transparent);
+    
+    }
+    .footer-col h4 {
+        font-size: var(--font-size-m);
+    }
+    .footer-col p {
+        font-size: var(--font-size-xs);
+    }
+    .footer-col {
+        text-align: center;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-10); 
+    }
+    .kontakty-kontejner {
+        gap: 0;
+    }
+
+    .radek {
+        flex-direction: column;
+        padding: 0  var(--spacing-5);
+        box-sizing: border-box;
+    }
+
+    .karta {
+        width: calc(100% - 20px);
+        margin: 0 0 var(--spacing-20) 0 ;
+        border-radius: var(--radius-10);
+        align-items: center;
+        text-align: center;
+        padding:  var(--spacing-30) var(--spacing-10);
+    }
+    
+    .animace-zleva, .animace-zprava {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    .sirka-40, .sirka-60 {
+        width: 100%;
+        margin-left: 0; 
+        margin-right: 0; 
+    }
+    .radek-kontakt {
+        margin-top: var(--spacing-0);
+        justify-items: center;
+    }
+    .radek .karta:first-child,
+    .radek .karta:last-child {
+        align-items: flex-start; 
+        text-align: left;
+        margin: var(--spacing-10) var(--spacing-10);
+    }
+
+    .mapa-wrapper {
+        width: calc(100% - 30px);
+        justify-self: center;
+    }
+    .kontaktni-formular input,
+    .kontaktni-formular textarea {
+        width: calc(100% - 40px);             
+    }
+    .radek h3 {
+        font-size: var(--font-size-xl);
+    }
+    .radek p {
+        font-size: var(--font-size-m);
+       text-align: justify;
+    }
+    .sirka-75 {
+        width: calc(100% - 20px);
+    }
+    .karta-vpravo, .karta-vlevo {
+        margin: 0 0 var(--spacing-20) 0;
+        border-radius: var(--radius-10);
+    }
+     .menu-btn {
         display: flex;
     }
     .header.active .menu-btn span:nth-child(1) {
@@ -12,3 +205,28 @@
         transform: rotate(-45deg) translate(5px, -8px);
     }
 }
+
+@media(min-width: 1350px) {
+    .portfolio-kontejner {
+        align-items: center;
+        gap: 0;
+    }
+    
+
+    .portfolio-text p, 
+    .portfolio-text h2 {
+        text-align: center;
+        color: var(--dark);
+    }
+    .portfolio-text ::after {
+        width: 300px;
+        justify-self: center;
+    }
+    .spany {
+        justify-self: center;
+    }
+}
+
+
+
+

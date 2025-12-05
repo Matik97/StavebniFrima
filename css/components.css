@@ -1,32 +1,501 @@
-/* Existující kód */
+
+/*HEADER*/
+.header-nav {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+} 
+
+.nav-left, .nav-right {
+    align-self: center;
+}
+
+.nav-right {
+    justify-self: end;
+}
+
+.nav-logo {
+    justify-items: start;
+    align-items: center;
+    margin: var(--spacing-20);
+}
+   
+.nav-logo img {
+    display: block;
+    max-height: 50px; 
+}
+
+.nav-left ul, .nav-right ul {
+    display: flex;
+    gap: 2vw; 
+}
+/*HERO SEKCE*/
+.hero-sekce {
+    grid-column: 1/-1;
+    background-image: url(../IMG/Site.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    z-index: 1;
+}
+.hero-text {
+    backdrop-filter: blur(8px);
+    background: var(--light-transparent);
+    color: var(--dark);
+    padding: var(--spacing-50);
+    border-radius: var(--radius-20);
+    margin: 0;
+    text-align: center;
+}
+
+
+/*FOOTER*/
+.footer-col {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-col a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px; 
+    transition: text-decoration-color 1s ease;
+    justify-self: center;
+    color: var(--light);
+}
+
+.footer-col a:hover {
+    text-decoration-color: var(--light);
+}
+
+.footer-col p,
+.footer-col h4 {
+    justify-self: center;
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.75s;
+}
+
+/*VAROVANI*/
+
+.varovani p {
+    color: var(--light);
+}
+
+
+
+.radek {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.karta {
+    background: var(--gradient-light);
+    padding:var(--spacing-40); 
+    box-shadow: 0 4px 6px -1px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.karta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+
+.radek .karta:first-child {
+    border-radius: 0 var(--radius-10) var(--radius-10)  0;
+    margin-right: var(--spacing-15);
+    align-items: flex-end; 
+    text-align: right;
+    padding-right: 5vw;
+}
+
+.radek .karta:last-child {
+    border-radius: var(--radius-10) 0 0 var(--radius-10) ;
+    margin-left:var(--spacing-15);
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5vw;
+}
+
+
+
+
+
+.karta h3 {
+    margin: 0 0 var(--spacing-15) 0;
+    color: var(--main-dark);
+}
+
+.odkaz {
+    color: var(--main-dark);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: var(--spacing-15);
+    display: inline-block;
+}
+
+.meta-info {
+    color: var(--secondary-light);
+    margin-top: var(--spacing-10);
+}
+
+.radek-kontakt {
+    margin-top: var(--spacing-30);
+}
+.mapa-wrapper {
+    width: 600px;
+    height: 450px;
+    border-radius: var(--radius-10) ;
+    overflow: hidden;
+    margin-bottom:var(--spacing-10);
+    box-shadow: inset 0 0 10px var(--shadow);
+    background-color: var(--light);
+}
+
+.mapa-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block; 
+}
+
+.kontaktni-formular input,
+.kontaktni-formular textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+.radek .karta-vpravo {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    border-radius: var(--radius-10)  0 0 var(--radius-10) ;
+}
+
+.radek .karta-vlevo {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    border-radius: 0 var(--radius-10) var(--radius-10)  0;
+}
+
+.Onas-kontejner .radek:first-child {
+    margin-top: var(--spacing-100);
+}
+
+.spany span {
+    font-size: var(--font-size-l);
+}
+
+/*PROJEKTY*/
+.stitek {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--main-dark);
+    color: var(--light);
+    padding: var(--spacing-5) var(--spacing-15) ;
+    font-weight: bold;
+    font-size:var(--font-size-s);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--radius-5) ;
+    z-index: 10;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+.portfolio-obrazek {
+    justify-self: center;
+    position: relative;
+    transition: transform 0.4s ease-in-out;
+    flex-shrink: 0;
+    width: calc(100% - 80px);
+    height: calc(100% - 800px);
+    padding: var(--spacing-20);
+}
+
+.portfolio-obrazek:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-obrazek img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-20) ;
+}
+
+.portfolio-kontejner:hover {
+    transform: translateY(-5px);
+    box-shadow:  0px 10px 25px var(--shadow);
+}
+.portfolio-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-text ::after {
+    justify-self: center;
+    width: 250px;
+}
+
+.portfolio-text p, 
+.portfolio-text h2 {
+    text-align: center;
+    color: var(--dark);
+}
+
+.projekt-layout {
+    grid-column: 1/-1;
+    grid-row: 2/4; 
+    display: flex;
+    margin: auto;
+    margin-top: var(--spacing-75);
+    gap: var(--spacing-50);
+    flex-direction: column;
+}
+
+.projekt-nadpis {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 1/-1;
+    padding: 0px;
+    text-align: center;
+    background-color: var(--main-dark);
+    margin-top:var(--spacing-90);
+}
+.projekt-nadpis h1{
+color:var(--light);
+margin-bottom: 0;
+}
+
+
+.projekt-nadpis p
+{
+
+color:var(--light);
+}
+
+/*RECENZE*/
+.recenze-sekce {
+    grid-column: 2/5; 
+    border-radius: var(--radius-20);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-80) var(--spacing-20);
+    margin: var(--spacing-60) 0; 
+    background-color:var(--main-light); 
+    color:var(--light);
+    
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.recenze-sekce::before,
+.recenze-sekce::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+
+}
+.recenze-sekce h2::after, 
+.nadpis-recenze::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+    width: 0 !important;
+}
+.recenze-sekce::before {
+    top: -50px;
+    left: -50px;
+}
+
+.recenze-sekce::after {
+    bottom: -50px;
+    right: -50px;
+}
+
+
+.nadpis-recenze {
+    font-size:var(--font-size-4xl);
+    margin-bottom: var(--spacing-50);
+    position: relative;
+    z-index: 1;
+    color:var(--light);
+}
+
+.recenze-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%; 
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; 
+    z-index: 1;
+    padding: 0 var(--spacing-60); 
+    box-sizing: border-box;
+}
+
+
+.recenze-karta {
+    display: none;
+    padding: var(--spacing-50) var(--spacing-40) ;
+    background:var(--light);
+    border-radius:var(--radius-20) ;
+    box-shadow: 0 10px 30px var(--shadow);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color:var(--secondary-dark);
+    width: 100%;
+}
+
+
+.recenze-karta.aktivni {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideIn 0.5s ease-out;
+}
+
+
+.recenze-karta::before {
+    content: "“";
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 150px;
+    color:var(--light);
+    font-family: serif;
+    z-index: 0;
+    line-height: 1;
+}
+
+
+.text-recenze {
+    font-size:var(--font-size-l);
+    font-style: italic;
+    color: var(--dark);
+    margin-bottom: var(--spacing-25);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.autor {
+    font-weight: 800;
+    color:var(--main-light);
+    margin-bottom: var(--spacing-5);
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size:var(--font-size-m);
+}
+
+.hvezdicky {
+    color:var(--gold);
+    font-size:var(--font-size-xl);
+    z-index: 1;
+}
+
+
+.sipka {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    
+    color: var(--light);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.sipka:hover {
+    background-color:var(--light);
+    color:var(--main-light);
+    transform: translateY(-50%) scale(1.1);
+}
+
+
+/*BUTTON*/
 .button {
     display: flex;
     height: var(--h50);
-    /* width: 150px;  <- Vyhodil jsem pevnou šířku, aby to bylo pružnější */
-    padding: 0 20px; /* Místo pevné šířky raději padding */
+    padding: var(--spacing-10) var(--spacing-20);
     font-size: var(--font-size-xl);
     align-items: center;
     justify-content: center;
-    margin: var(--margin-size-10);
-    border-radius: 5px;
+    margin: var(--spacing-10);
+    border-radius:var(--radius-5) ;
     color: var(--light);
-    white-space: nowrap; /* Text na jednom řádku */
+    white-space: nowrap;
 }
 
 .button:hover {
-    background-color: gray;
+    background-color:var(--secondary-light);
 }
 
-/* --- NOVÉ: Hamburger Tlačítko --- */
+
 .menu-btn {
-    display: none; /* Na desktopu skryté */
+    display: none; 
     background: none;
     border: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 6px;
-    padding: 10px;
-    order: 2; /* Na mobilu vpravo */
+    gap: var(--spacing-6);
+    padding: var(--spacing-10);
+    order: 2; 
     z-index: 1001;
 }
 
@@ -36,20 +505,20 @@
     width: 30px;
     height: 3px;
     background-color: var(--light);
-    border-radius: 3px;
+    border-radius: var(--radius-3);
     transition: all 0.3s ease-in-out;
 }
 
 
 
-/* Celkový obal pro všechny projekty */
+
 
 .section-separator {
     display: block;
     height: 1px;
-    background-color: #afabab;
+    background-color:var(--secondary-light);
     width: 50%;
-    margin: 60px auto;
+    margin: var(--spacing-60) auto;
     clear: both;
 }
 h2::after {
@@ -58,81 +527,78 @@ h2::after {
     width: 150px;
     height: 3px;
     background-color: var(--dark);
-    margin-top: 10px;
+    margin-top: var(--spacing-10);
     
     left: 0;
 }
 .cta-button {
-    background-color: var(--main-dark); /* Tmavě modrá */
-    color: white;
-    padding: 15px 40px;
-    border-radius: 50px; /* Kulaté tlačítko */
+    background-color: var(--main-dark); 
+    color:var(--light);
+    padding:var(--spacing-15) var(--spacing-40);
+    border-radius: var(--radius-20); 
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Stín, aby "levitovalo" */
+    font-size: var(--font-size-l);
+    box-shadow: 0 4px 15px var(--shadow);
     transition: transform 0.3s, background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: var(--main-light); /* Světlejší při najetí */
-    transform: translateY(-3px); /* Jemně nadskočí */
+    background-color: var(--main-light); 
+    transform: translateY(-3px); 
 }
 .kontaktni-formular {
     display: flex;
-    flex-direction: column; /* Prvky pod sebou */
+    flex-direction: column; 
     width: 100%;
-    gap: 15px;              /* Mezery mezi políčky */
+    gap:var(--spacing-15);              
 }
 
-/* Vzhled políček (Inputy a Textarea) */
+
 .kontaktni-formular input,
 .kontaktni-formular textarea {
     width: 100%;
-    padding: 12px 15px;
-    
-    /* Vzhled ladící k "Tech" stylu */
-    border: 1px solid #CBD5E1; 
-    background-color: rgba(255, 255, 255, 0.7); /* Jemně průsvitná bílá */
-    border-radius: 6px;
-    
-    font-family: inherit;   /* Převezme font stránky */
-    font-size: 0.95rem;
-    color: var(--dark);     /* Barva textu */
-    
-    box-sizing: border-box; /* Padding nezvětšuje šířku */
-    outline: none;          /* Zruší defaultní modrý obrys prohlížeče */
+    padding: var(--spacing-15);
+    border: 1px solid var(--dark); 
+    background-color:var(--light-transparent);
+    border-radius: var(--radius-5);
+    font-family: inherit;   
+    font-size: var(--font-size-s);
+    color: var(--dark);     
+    box-sizing: border-box; 
+    outline: none;          
     transition: all 0.3s ease;
 }
-
-/* Efekt při kliknutí do políčka */
 .kontaktni-formular input:focus,
 .kontaktni-formular textarea:focus {
-    border-color: var(--main-dark, #0F172A); 
-    background-color: #FFFFFF; /* Při psaní úplně zbělá */
+    border-color: var(--main-dark); 
+    background-color:var(--light);
     box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1); 
 }
-
-/* Vzhled tlačítka */
 .kontaktni-formular button {
-    padding: 12px 25px;
-    background-color: var(--main-dark, #0F172A); 
-    color: white;
-    
+    padding: var(--spacing-15);
+    background-color: var(--main-dark); 
+    color:var(--light);
     border: none;
-    border-radius: 6px;
-    
+    border-radius: var(--radius-5);
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size:var(--font-size-s);
     letter-spacing: 1px;
-    
-    align-self: flex-start; /* Tlačítko vlevo */
+    align-self: flex-start; 
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .kontaktni-formular button:hover {
-    background-color: #334155; 
-    transform: translateY(-2px); /* Jemné nadskočení */
+    background-color:var(--main-light); 
+    transform: translateY(-2px); 
+}
+     iframe {
+    width: 100%;
+    max-width: 100%;
+}
+input, textarea {
+    width: 100%;
+    box-sizing: border-box; 
 }
