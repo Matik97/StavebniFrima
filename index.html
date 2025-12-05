@@ -52,11 +52,45 @@
     </nav>
 </div>        
         
-        <div class="main">
-            <p>
-                Hybridní kick point je ideální pro tvůrce hry...
-            </p>
+        <div class="recenze-sekce">
+    <h2 class="nadpis-recenze">Co o nás říkají naši zákazníci</h2>
+    
+    <div class="recenze-container">
+        <button class="sipka vlevo" onclick="zmenitRecenzi(-1)">&#10094;</button>
+
+        <div class="recenze-karta aktivni">
+            <p class="text-recenze">"Skvělá spolupráce! Projekt byl odevzdán včas a výsledek předčil naše očekávání. Komunikace byla na jedničku."</p>
+            <h4 class="autor">- Jan Novák, Stavby s.r.o.</h4>
+            <div class="hvezdicky">★★★★★</div>
         </div>
+
+        <div class="recenze-karta">
+            <p class="text-recenze">"Potřebovali jsme rychlý redesign a tohle bylo přesně ono. Moderní, čisté a funkční. Určitě doporučuji."</p>
+            <h4 class="autor">- Petr Svoboda, DesignStudio</h4>
+            <div class="hvezdicky">★★★★★</div>
+        </div>
+
+        <div class="recenze-karta">
+            <p class="text-recenze">"Profesionální přístup od začátku do konce. Oceňuji hlavně smysl pro detail a trpělivost při úpravách."</p>
+            <h4 class="autor">- Jana Malá, Květinářství U Jany</h4>
+            <div class="hvezdicky">★★★★☆</div>
+        </div>
+
+        <div class="recenze-karta">
+            <p class="text-recenze">"Kvalitní kód a přehledná struktura. Web se načítá bleskově. Díky za skvělou práci."</p>
+            <h4 class="autor">- Martin Dvořák, IT Solutions</h4>
+            <div class="hvezdicky">★★★★★</div>
+        </div>
+
+        <div class="recenze-karta">
+            <p class="text-recenze">"Spolupracujeme již dlouhodobě a nemůžeme si stěžovat. Spolehlivost je dnes vzácná."</p>
+            <h4 class="autor">- Alena Veselá, Marketing Guru</h4>
+            <div class="hvezdicky">★★★★★</div>
+        </div>
+
+        <button class="sipka vpravo" onclick="zmenitRecenzi(1)">&#10095;</button>
+    </div>
+</div>
 
         <footer class="footer">    
 <div class="footer-col">
@@ -93,7 +127,36 @@
 
         menuToggle.addEventListener('click', () => {
             mainHeader.classList.toggle('active');
-        });
+        }
+    )
+// Nastavíme počítadlo na první recenzi (index 1)
+    let indexRecenze = 1;
+    zobrazRecenzi(indexRecenze);
+
+    // Funkce pro posouvání (volaná tlačítky)
+    function zmenitRecenzi(n) {
+        zobrazRecenzi(indexRecenze += n);
+    }
+
+    // Hlavní funkce pro zobrazení
+    function zobrazRecenzi(n) {
+        let i;
+        let recenze = document.getElementsByClassName("recenze-karta");
+        
+        // Pokud dojdeme na konec, skočíme na začátek
+        if (n > recenze.length) {indexRecenze = 1}
+        
+        // Pokud jsme na začátku a dáme "zpět", skočíme na konec
+        if (n < 1) {indexRecenze = recenze.length}
+        
+        // 1. Skryjeme všechny recenze
+        for (i = 0; i < recenze.length; i++) {
+            recenze[i].classList.remove("aktivni");
+        }
+        
+        // 2. Zobrazíme jen tu aktuální (index - 1, protože pole začíná nulou)
+        recenze[indexRecenze - 1].classList.add("aktivni");
+    }
     </script>
  </div>
 </body>
